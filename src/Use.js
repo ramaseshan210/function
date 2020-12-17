@@ -4,7 +4,10 @@ import Switch from '@material-ui/core/Switch';
 import Select from 'react-select';
 import { render } from '@testing-library/react';
 import { Button } from '@material-ui/core';
-import CustomSelect from './CustomSelect'
+import CustomSelect from './CustomSelect';
+import ClipLoader from "react-spinners/ClipLoader"
+
+
 
 
 
@@ -172,7 +175,7 @@ const [state, setstate] = useState({
                     
                   
         <div className="lbn">
-                <label className="labelClass">loading</label>
+                <label className="labelClass">disabled</label>
                 <Switch 
                 className="switchMargin"
                 color="primary" 
@@ -182,7 +185,7 @@ const [state, setstate] = useState({
                 onChange={getValue}/>
         </div>
         <div className="lbn">
-                <label   className="labelClass">disabled</label>
+                <label   className="labelClass">loading</label>
                 <span></span>
                 <Switch   
                 className="switchMargin"  
@@ -194,7 +197,7 @@ const [state, setstate] = useState({
          </div>
             </div>
             <div className="side">
-           <Button type="text" variant="contained" color={colour} disabled={ condition===1 ? state.load : state.check} style={{ borderRadius: `${state.border}px`}}>{state.label}</Button>
+           <Button  type="text" variant="contained" color={colour} disabled={ state.check} style={{ borderRadius: `${state.border}px`}}> {state.load===true && state.check===false && <ClipLoader/>} {state.check===false && state.load===false? state.label : !state.label}</Button>
            
             </div>
         
