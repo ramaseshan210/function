@@ -197,7 +197,8 @@ const [state, setstate] = useState({
          </div>
             </div>
             <div className="side">
-           <Button  type="text" variant="contained" color={colour} disabled={ state.check} style={{ borderRadius: `${state.border}px`}}> {state.load===true && state.check===false && <ClipLoader/>} {state.check===false && state.load===false? state.label : !state.label}</Button>
+           <Button  type="text" variant="contained" color={colour} disabled={ state.check} style={{ borderRadius: `${state.border}px`}}> {state.load===true && state.check===false && <ClipLoader/>}
+            {state.check===true&& state.load===false || state.check===false && state.load===false|| state.check===true && state.load===true? state.label : !state.label}</Button>
            
             </div>
         
